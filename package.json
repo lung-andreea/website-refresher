@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "chromedriver": "^114.0.2",
+    "nodemon": "^2.0.22",
     "selenium-webdriver": "^4.10.0"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.16.0"
+  }
 }
