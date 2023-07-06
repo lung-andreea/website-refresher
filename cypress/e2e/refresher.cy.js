@@ -25,8 +25,7 @@ describe('template spec', () => {
             selector: 'img[alt="EC free pass"]',
             onSuccess: async (foundElem) => {
                 console.log('FOUND THE IMAGE CODE!!!', foundElem.src)
-                const imageUrl = 'https://api2.electriccastle.ro/media/wysiwyg/ga_talks.jpg'
-                await fetch(`https://api.ocr.space/parse/imageurl?apikey=${ocrApiKey}&url=${imageUrl}`).then(res => res.json()).then(data=>{
+                await fetch(`https://api.ocr.space/parse/imageurl?apikey=${ocrApiKey}&url=${foundElem.src}`).then(res => res.json()).then(data=>{
                     const parsedText = data?.ParsedResults?.[0]?.ParsedText || ''
                     const code = parsedText.split('\r\n')?.[1]
                     codeWithO = 'O'+code.substring(1)
